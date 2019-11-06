@@ -83,35 +83,36 @@ public class ProbDelViajante {
 
         System.out.println("Combinaciones posibles: ");
         Perm2(nodos, "", cantidad, r);
-
+        System.out.print("Elegir ruta: ");
+        
         System.out.println("");
 
-        for (int i = 1; i <= cantidad - 1; i++) {
-            aux = i;
-            for (int j = 2; j <= cantidad; j++) {
-
-                // COMPARA QUE i, j NO SEAN IGUALES
-                if (i != j) {
-                    // SE ASEGURA QUE EL ÍNDICE j SEA MAYOR A AUXILIAR QUE ES IGUAL A i,
-                    // YA QUE EVITA QUE SE REPITAN LOS NODOS EJ : 3-2 y 2-3
-                    if (j > aux) {
-
-                        System.out.println("[" + i + "]" + "[" + j + "]: " + matriz[i][j]);
-
-                    }
-                }
-
-            }
-
-            aux++;
-
-        }
+//        for (int i = 1; i <= cantidad - 1; i++) {
+//            aux = i;
+//            for (int j = 2; j <= cantidad; j++) {
+//
+//                 COMPARA QUE i, j NO SEAN IGUALES
+//                if (i != j) {
+//                     SE ASEGURA QUE EL ÍNDICE j SEA MAYOR A AUXILIAR QUE ES IGUAL A i,
+//                     YA QUE EVITA QUE SE REPITAN LOS NODOS EJ : 3-2 y 2-3
+//                    if (j > aux) {
+//
+//                        System.out.println("[" + i + "]" + "[" + j + "]: " + matriz[i][j]);
+//
+//                    }
+//                }
+//
+//            }
+//
+//            aux++;
+//
+//        }
 
         System.out.println("");
         System.out.println("");
 
-        // Verificar que la lista de Soluciones no este vacía ... ! * HAY QUE SEGUIR
-        System.out.println("Soluciones: " + soluciones.get(0));
+//        // Verificar que la lista de Soluciones no este vacía ... ! * HAY QUE SEGUIR
+//        System.out.println("Soluciones: " + soluciones.get(0));
 
     }
 
