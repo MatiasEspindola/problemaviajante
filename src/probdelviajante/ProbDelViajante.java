@@ -52,7 +52,7 @@ public class ProbDelViajante {
 
                 // COMPARA QUE i, j NO SEAN IGUALES
                 if (i != j) {
-                    // SE ASEGURA QUE EL ÍNDICE j SEA MAYOR A AUXILIAR QUE ES IGUAL A i,
+                    // SE ASEGURA QUE EL ÍNDICE j SEA MAYOR A aux QUE ES IGUAL A i,
                     // YA QUE EVITA QUE SE REPITAN LOS NODOS EJ : 3-2 y 2-3
                     if (j > aux) {
 
@@ -105,6 +105,7 @@ public class ProbDelViajante {
         System.out.println("");
         System.out.println("");
 
+        // Verificar que la lista de Soluciones no este vacía ... ! * HAY QUE SEGUIR
         System.out.println("Soluciones: " + soluciones.get(0));
 
     }
