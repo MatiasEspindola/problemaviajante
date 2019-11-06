@@ -16,12 +16,14 @@ import java.util.Scanner;
 public class ProbDelViajante {
 
     static List<String> soluciones = new ArrayList<>();
+    static int y = 1;
 
     private static void Perm2(String[] elem, String act, int n, int r) {
 
         if (n == 0) {
             soluciones.add(act + "" + act.charAt(0));
-            System.out.println(act + "" + act.charAt(0));
+            System.out.println(y + ")" + act + "" + act.charAt(0));
+            y++;
         } else {
             for (int i = 0; i < r; i++) {
                 if (!act.contains(elem[i])) {
@@ -29,6 +31,8 @@ public class ProbDelViajante {
                 }
             }
         }
+        
+        
 
     }
 
