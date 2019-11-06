@@ -16,14 +16,11 @@ import java.util.Scanner;
 public class ProbDelViajante {
 
     static List<String> soluciones = new ArrayList<>();
-    static int y = 1;
 
     private static void Perm2(String[] elem, String act, int n, int r) {
 
         if (n == 0) {
             soluciones.add(act + "" + act.charAt(0));
-            System.out.println(y + ")" + act + "" + act.charAt(0));
-            y++;
         } else {
             for (int i = 0; i < r; i++) {
                 if (!act.contains(elem[i])) {
@@ -72,22 +69,25 @@ public class ProbDelViajante {
             aux++;
 
         }
-        
-         // Separa los nodos para hacer las combinaciones
+
+        // Separa los nodos para hacer las combinaciones
         String[] nodos = new String[cantidad];
 
         int opcion;
-        
+
+        int cantidadSoluciones = 1;
+
         System.out.println("");
-        System.out.print("NODOS: "); 
+        System.out.print("NODOS: ");
         for (int i = 0; i < cantidad; i++) {
+            cantidadSoluciones = cantidadSoluciones * (i + 1);
             nodos[i] = String.valueOf(i + 1);
             System.out.print(nodos[i] + ", ");
         }
         System.out.println("");
-        System.out.print("Elegir nodo: "); 
+        System.out.print("Elegir nodo: ");
         opcion = entrada.nextInt();
-        while(opcion < 1 || opcion > cantidad){
+        while (opcion < 1 || opcion > cantidad) {
             System.out.println("");
             System.out.println("Elije un nodo válido");
             System.out.print("Elegir nodo: ");
@@ -97,13 +97,29 @@ public class ProbDelViajante {
         // r = rango (cantidad de nodos)
         int r = nodos.length;
 
+        // TODAS LAS COMBINACIONES POSIBLES
+        Perm2(nodos, "", cantidad, r);
+
+        System.out.println("");
+
+        int referencia = opcion * (cantidadSoluciones / cantidad);
+
+        System.out.println("");
+        System.out.println("Referencia: " + referencia);
         System.out.println("");
 
         System.out.println("Combinaciones posibles: ");
-        Perm2(nodos, "", cantidad, r);
+        for (int i = (referencia - (cantidadSoluciones / cantidad)); i < referencia; i++) {
+            System.out.println((i + 1) + ") " + soluciones.get(i));
+        }
 
-
-        
+//        System.out.println("Combinaciones posibles: ");
+//        
+//        
+//        
+//
+//
+//        System.out.println("");
 
     }
 
