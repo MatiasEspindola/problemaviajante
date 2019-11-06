@@ -77,6 +77,7 @@ public class ProbDelViajante {
 
         System.out.println("");
 
+        System.out.println("Combinaciones posibles: ");
         Perm2(nodos, "", cantidad, r);
 
         System.out.println("");
