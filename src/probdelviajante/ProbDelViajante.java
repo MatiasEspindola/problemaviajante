@@ -58,10 +58,13 @@ public class ProbDelViajante {
                     // SE ASEGURA QUE EL ÍNDICE j SEA MAYOR A aux QUE ES IGUAL A i,
                     // YA QUE EVITA QUE SE REPITAN LOS NODOS EJ : 3-2 y 2-3
                     if (j > aux) {
-
                         System.out.print("[" + i + "]" + "[" + j + "]: ");
                         matriz[i][j] = entrada.nextInt();
+                        matriz[j][i] = matriz[i][j];
                     }
+                }else{
+                    matriz[i][j] = 0;
+                    matriz[j][i] = 0;
                 }
 
             }
@@ -111,6 +114,9 @@ public class ProbDelViajante {
         System.out.println("Combinaciones posibles: ");
         for (int i = (referencia - (cantidadSoluciones / cantidad)); i < referencia; i++) {
             System.out.println((i + 1) + ") " + soluciones.get(i));
+            System.out.println("Elementos: " + soluciones.get(i).length());
+            
+            System.out.println("");
         }
 
 //        System.out.println("Combinaciones posibles: ");
