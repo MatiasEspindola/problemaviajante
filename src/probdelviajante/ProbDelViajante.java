@@ -31,8 +31,6 @@ public class ProbDelViajante {
                 }
             }
         }
-        
-        
 
     }
 
@@ -46,10 +44,14 @@ public class ProbDelViajante {
         System.out.print("Ingrese cantidad de nodos: ");
         cantidad = entrada.nextInt();
 
+        // Guarda el valor de cada ruta
         int matriz[][] = new int[cantidad + 1][cantidad + 1];
 
+        // Me ayuda a partir la matriz para no repetir valores
         int aux = 0;
 
+        System.out.println("");
+        System.out.println("Ingrese distancia de ruta: ");
         for (int i = 1; i <= cantidad - 1; i++) {
             aux = i;
             for (int j = 2; j <= cantidad; j++) {
@@ -70,49 +72,38 @@ public class ProbDelViajante {
             aux++;
 
         }
-
+        
+         // Separa los nodos para hacer las combinaciones
         String[] nodos = new String[cantidad];
 
+        int opcion;
+        
+        System.out.println("");
+        System.out.print("NODOS: "); 
         for (int i = 0; i < cantidad; i++) {
             nodos[i] = String.valueOf(i + 1);
+            System.out.print(nodos[i] + ", ");
+        }
+        System.out.println("");
+        System.out.print("Elegir nodo: "); 
+        opcion = entrada.nextInt();
+        while(opcion < 1 || opcion > cantidad){
+            System.out.println("");
+            System.out.println("Elije un nodo válido");
+            System.out.print("Elegir nodo: ");
+            opcion = entrada.nextInt();
         }
 
+        // r = rango (cantidad de nodos)
         int r = nodos.length;
 
         System.out.println("");
 
         System.out.println("Combinaciones posibles: ");
         Perm2(nodos, "", cantidad, r);
-        System.out.print("Elegir ruta: ");
+
+
         
-        System.out.println("");
-
-//        for (int i = 1; i <= cantidad - 1; i++) {
-//            aux = i;
-//            for (int j = 2; j <= cantidad; j++) {
-//
-//                 COMPARA QUE i, j NO SEAN IGUALES
-//                if (i != j) {
-//                     SE ASEGURA QUE EL ÍNDICE j SEA MAYOR A AUXILIAR QUE ES IGUAL A i,
-//                     YA QUE EVITA QUE SE REPITAN LOS NODOS EJ : 3-2 y 2-3
-//                    if (j > aux) {
-//
-//                        System.out.println("[" + i + "]" + "[" + j + "]: " + matriz[i][j]);
-//
-//                    }
-//                }
-//
-//            }
-//
-//            aux++;
-//
-//        }
-
-        System.out.println("");
-        System.out.println("");
-
-//        // Verificar que la lista de Soluciones no este vacía ... ! * HAY QUE SEGUIR
-//        System.out.println("Soluciones: " + soluciones.get(0));
 
     }
 
