@@ -113,15 +113,22 @@ public class ProbDelViajante {
 
         int km[] = new int[referencia];
         
+        
         System.out.println("Combinaciones posibles: ");
         for (int i = (referencia - (cantidadSoluciones / cantidad)); i < referencia; i++) {
             System.out.println((i + 1) + ") " + soluciones.get(i));
             System.out.println("Elementos: " + soluciones.get(i).length());
-//            for (int j = 2; j < soluciones.get(i).length() + 1; j++) {
-//                System.out.println("Movimientos: " + j);
-//            }
+            for (int j = 1; j < soluciones.size(); j++) {
+                
+                    if(j == soluciones.get(i).length() - 1){
+                        System.out.print(matriz[j][1] + " - ");
+                    }else{
+                        System.out.print(matriz[j][j+1] + " - ");
+                    }
+                
+            }
             System.out.println("");
-        }
+        } 
 
 //        System.out.println("Combinaciones posibles: ");
 //        
