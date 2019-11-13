@@ -68,6 +68,12 @@ public class ProbDelViajante {
         System.out.print("Ingrese cantidad de nodos: ");
         cantidad = entrada.nextInt();
 
+        while (cantidad < 2) {
+            System.out.println("¡Ingrese más de 1 nodo!");
+            System.out.print("Ingrese cantidad de nodos: ");
+            cantidad = entrada.nextInt();
+        }
+
         // Guarda el valor de cada ruta
         int matriz[][] = new int[cantidad + 1][cantidad + 1];
 
