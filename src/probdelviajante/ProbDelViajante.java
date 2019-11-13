@@ -72,7 +72,7 @@ public class ProbDelViajante {
             System.out.print("Ingrese cantidad de nodos: ");
             cantidad = entrada.nextInt();
         }
-        
+
         while (cantidad > 9) {
             System.out.println("¡Ingrese menos de 10 nodos!");
             System.out.print("Ingrese cantidad de nodos: ");
@@ -151,9 +151,10 @@ public class ProbDelViajante {
 
         // INDICE PARA GUARDAR LOS KM
         List<Integer> km = new ArrayList<>();
+        int indice = referencia - (cantidadSoluciones / cantidad);
 
         System.out.println("Combinaciones posibles: ");
-        for (int i = (referencia - (cantidadSoluciones / cantidad)); i < referencia; i++) {
+        for (int i = indice; i < referencia; i++) {
             System.out.println((i + 1) + ") " + soluciones.get(i));
             System.out.println("Elementos: " + soluciones.get(i).length());
             System.out.println("Recorrido: ");
@@ -173,7 +174,7 @@ public class ProbDelViajante {
 
             }
             km.add(sumatoria);
-            System.out.println(" = " + km.get(i) + "km. ");
+            System.out.println(" = " + sumatoria + "km. ");
             System.out.println("");
         }
 
@@ -184,14 +185,14 @@ public class ProbDelViajante {
         List<Integer> caminoscortos = new ArrayList<>();
 
         //Guarda el camino más corto
-        for (int i = (referencia - (cantidadSoluciones / cantidad)); i < referencia; i++) {
+        for (int i = 0; i < km.size(); i++) {
             if (min > km.get(i)) {
                 min = km.get(i);
             }
         }
 
         //Verifica que no hayan mas de un resultado optimo
-        for (int i = (referencia - (cantidadSoluciones / cantidad)); i < referencia; i++) {
+        for (int i = 0; i < km.size(); i++) {
             if (min == km.get(i)) {
                 caminoscortos.add(i);
             }
@@ -210,7 +211,7 @@ public class ProbDelViajante {
 
         System.out.println(mensajeInicial);
         for (int i = 0; i < caminoscortos.size(); i++) {
-            System.out.println((caminoscortos.get(i) + 1) + ") " + soluciones.get(caminoscortos.get(i)));
+            System.out.println(caminoscortos.get(i) + indice + 1 + ") " + soluciones.get(caminoscortos.get(i) + indice + 1));
         }
         System.out.println(mensajeFinal);
 
